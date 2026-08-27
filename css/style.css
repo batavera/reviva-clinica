@@ -257,14 +257,6 @@ section {
     color: var(--color-sage);
 }
 
-/* ==========================================================================
-   CABEÇALHO & LOGO (ALINHAMENTO DEFINITIVO SEM VAZAMENTO)
-   ========================================================================== */
-
-/* ==========================================================================
-   CABEÇALHO & LOGO IMPONENTE (SELO DE ALTO IMPACTO)
-   ========================================================================== */
-
 .header {
     position: sticky;
     top: 0;
@@ -278,14 +270,12 @@ section {
 
 .header-container {
     height: 96px;
-    /* Altura generosa no topo para acomodar o logo grande */
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: height 0.3s ease;
 }
 
-/* Container do Selo da Marca */
 .brand {
     display: flex;
     align-items: center;
@@ -295,7 +285,6 @@ section {
 
 .brand-seal {
     width: 92px;
-    /* Tamanho grande e imponente na abertura */
     height: 92px;
     border-radius: 50%;
     background: #FFFFFF;
@@ -314,13 +303,8 @@ section {
     height: 100%;
     object-fit: contain;
     transform: scale(1.04);
-    /* Esconde a borda original da foto */
     transition: transform 0.3s ease;
 }
-
-/* ==========================================================================
-   ESTADO COMPACTO NA ROLAGEM (SCROLLED)
-   ========================================================================== */
 
 .header.scrolled {
     background-color: rgba(250, 247, 242, 0.98);
@@ -329,17 +313,14 @@ section {
 
 .header.scrolled .header-container {
     height: 70px;
-    /* Reduz a barra suavemente */
 }
 
 .header.scrolled .brand-seal {
     width: 52px;
-    /* Encolhe o logo para caber 100% dentro da barra */
     height: 52px;
     box-shadow: 0 2px 8px rgba(28, 82, 83, 0.1);
 }
 
-/* Responsividade Mobile */
 @media (max-width: 768px) {
     .header-container {
         height: 80px;
@@ -358,45 +339,6 @@ section {
         width: 46px;
         height: 46px;
     }
-}
-
-.brand-symbol {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(28, 82, 83, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-petrol);
-}
-
-.brand-symbol svg {
-    width: 24px;
-    height: 24px;
-}
-
-.brand-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.brand-title {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: var(--color-petrol);
-    line-height: 1;
-}
-
-.brand-subtitle {
-    font-size: 0.55rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-    font-weight: 600;
-    margin-top: 2px;
 }
 
 .nav-desktop {
@@ -450,7 +392,7 @@ section {
 }
 
 /* ==========================================================================
-   HERO SECTION COM VÍDEO
+   HERO SECTION & VÍDEO (LARGURA TOTAL E ENQUADRAMENTO PERFEITO)
    ========================================================================== */
 
 .hero-section {
@@ -559,43 +501,18 @@ section {
     font-weight: 500;
 }
 
-/* Card de Vídeo */
-/* ==========================================================================
-   COLUNA DO VÍDEO & PROVA SOCIAL INTEGRADA (DESKTOP E MOBILE)
-   ========================================================================== */
-
+/* Coluna Visual do Hero */
 .hero-visual {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-/* Card de Avaliação integrado abaixo do vídeo, sem cobrir nada */
-.floating-badge {
-    position: static;
-    /* Remove o posicionamento flutuante */
-    margin-top: 16px;
-    /* Espaçamento elegante abaixo do vídeo */
     width: 100%;
-    max-width: 100%;
-    background: var(--color-white);
-    padding: 12px 20px;
-    border-radius: var(--radius-md);
-    border: 1px solid rgba(28, 82, 83, 0.08);
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.floating-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-card);
 }
 
 .hero-video-card {
+    width: 100%;
+    max-width: 440px;
     border-radius: var(--radius-xl);
     overflow: hidden;
     border: 8px solid var(--color-white);
@@ -606,7 +523,7 @@ section {
 .video-wrapper {
     position: relative;
     aspect-ratio: 9 / 16;
-    max-height: 520px;
+    max-height: 560px;
     width: 100%;
     overflow: hidden;
 }
@@ -654,40 +571,26 @@ section {
     opacity: 0.85;
 }
 
-/* ==========================================================================
-   CARD FLUTUANTE REPOSICIONADO (SUPERIOR ESQUERDO)
-   ========================================================================== */
-
-/* ==========================================================================
-   CARD DE ATENDIMENTO HUMANIZADO (DESK: FLUTUANTE | MOBILE: INTEGRADO)
-   ========================================================================== */
-
+/* Card de Prova Social Integrado Abaixo do Vídeo (Sem Sobreposição) */
 .floating-badge {
-    position: absolute;
-    top: 16px;
-    left: -20px;
+    position: static;
+    margin-top: 16px;
+    width: 100%;
+    max-width: 440px;
     background: var(--color-white);
-    padding: 10px 14px;
+    padding: 12px 18px;
     border-radius: var(--radius-md);
-    border: 1px solid rgba(28, 82, 83, 0.1);
-    box-shadow: var(--shadow-card-hover);
+    border: 1px solid rgba(28, 82, 83, 0.08);
+    box-shadow: var(--shadow-sm);
     display: flex;
     align-items: center;
-    gap: 12px;
-    max-width: 280px;
-    z-index: 10;
+    gap: 14px;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-/* No celular: remove a sobreposição e posiciona abaixo do vídeo */
-@media (max-width: 992px) {
-    .floating-badge {
-        position: static;
-        margin: 16px auto 0 auto;
-        max-width: 100%;
-        width: 100%;
-        justify-content: center;
-        box-shadow: var(--shadow-card);
-    }
+.floating-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
 }
 
 .badge-icon-box {
@@ -780,10 +683,6 @@ section {
     text-align: center;
 }
 
-/* ==========================================================================
-   ÍCONES DOS PILARES (ESTILIZAÇÃO & ANIMAÇÃO SUAVE)
-   ========================================================================== */
-
 .pillar-icon {
     width: 60px;
     height: 60px;
@@ -805,7 +704,6 @@ section {
     display: block;
 }
 
-/* Efeito ao passar o mouse no card */
 .pillar-card:hover .pillar-icon {
     background-color: var(--color-petrol);
     color: var(--color-white);
@@ -840,10 +738,6 @@ section {
     transform: translateY(-4px);
     box-shadow: var(--shadow-card-hover);
 }
-
-/* ==========================================================================
-   ÍCONES DAS ESPECIALIDADES
-   ========================================================================== */
 
 .specialty-icon {
     width: 54px;
@@ -951,7 +845,6 @@ section {
     object-fit: cover;
 }
 
-
 .team-values-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1022,16 +915,6 @@ section {
     gap: 16px;
 }
 
-/* ==========================================================================
-   ÍCONES DA SEÇÃO ESPAÇO & HOSPITALIDADE
-   ========================================================================== */
-
-.feature-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-}
-
 .feature-icon {
     width: 44px;
     height: 44px;
@@ -1052,7 +935,6 @@ section {
     display: block;
 }
 
-/* Efeito sutil ao passar o mouse */
 .feature-item:hover .feature-icon {
     background-color: var(--color-petrol);
     color: var(--color-white);
@@ -1107,22 +989,6 @@ section {
 }
 
 /* ==========================================================================
-   FAQ ACCORDION
-   ========================================================================== */
-
-/* ==========================================================================
-   FAQ ACCORDION (ANIMAÇÃO SUAVE DE ABERTURA E FECHAMENTO)
-   ========================================================================== */
-
-/* ==========================================================================
-   FAQ ACCORDION (CONTROLE DIRETO VIA CLASSE .ACTIVE)
-   ========================================================================== */
-
-/* ==========================================================================
-   FAQ NATIVO (HTML5 DETAILS/SUMMARY - 100% FUNCIONAL SEM JS)
-   ========================================================================== */
-
-/* ==========================================================================
    FAQ NATIVO (HTML5 DETAILS/SUMMARY - SEM DEPENDÊNCIA DE JS)
    ========================================================================== */
 
@@ -1163,18 +1029,15 @@ summary.accordion-button {
     cursor: pointer;
     outline: none;
     list-style: none;
-    /* Remove seta padrão preta */
     user-select: none;
     -webkit-user-select: none;
 }
 
-/* Remove marcadores padrões dos navegadores */
 summary::-webkit-details-marker,
 summary::marker {
     display: none;
 }
 
-/* Rotação suave da seta */
 .accordion-icon {
     width: 20px;
     height: 20px;
@@ -1210,18 +1073,6 @@ details.accordion-item[open] .accordion-icon {
 
 .faq-link:hover {
     color: var(--color-petrol-dark);
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-4px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* ==========================================================================
@@ -1304,6 +1155,36 @@ details.accordion-item[open] .accordion-icon {
 .form-control:focus {
     border-color: var(--color-petrol);
     background: var(--color-white);
+}
+
+/* ==========================================================================
+   FOTO DO INSTAGRAM
+   ========================================================================== */
+
+.instagram-center-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 36px 0 32px 0;
+}
+
+.instagram-frame {
+    width: 100%;
+    max-width: 440px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 8px solid var(--color-white);
+    box-shadow: var(--shadow-card);
+    background: var(--color-white);
+}
+
+.instagram-img {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: cover;
+    display: block;
 }
 
 /* ==========================================================================
@@ -1394,38 +1275,6 @@ details.accordion-item[open] .accordion-icon {
     color: #FFFFFF !important;
 }
 
-/* ==========================================================================
-   CENTRALIZAÇÃO DA FOTO DO INSTAGRAM
-   ========================================================================== */
-
-.instagram-center-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 36px 0 32px 0;
-}
-
-.instagram-frame {
-    width: 100%;
-    max-width: 440px;
-    /* Largura controlada */
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    border: 8px solid var(--color-white);
-    box-shadow: var(--shadow-card);
-    background: var(--color-white);
-}
-
-.instagram-img {
-    width: 100%;
-    height: auto;
-    max-height: 480px;
-    /* Limita a altura para manter a proporção */
-    object-fit: cover;
-    display: block;
-}
-
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -1433,26 +1282,6 @@ details.accordion-item[open] .accordion-icon {
     padding-top: 28px;
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.45);
-}
-
-@media (max-width: 768px) {
-    .footer-top {
-        flex-direction: column;
-        text-align: center;
-        gap: 24px;
-    }
-
-    .footer-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-    }
 }
 
 .whatsapp-float {
@@ -1477,7 +1306,7 @@ details.accordion-item[open] .accordion-icon {
     transform: scale(1.1);
 }
 
-.whatsapp-icon {
+.whatsapp-svg {
     width: 32px;
     height: 32px;
 }
@@ -1524,9 +1353,9 @@ details.accordion-item[open] .accordion-icon {
         padding: 40px 24px;
     }
 
-    .hero-video-card {
-        max-width: 420px;
-        margin: 0 auto;
+    .hero-video-card,
+    .floating-badge {
+        max-width: 100%;
     }
 }
 
