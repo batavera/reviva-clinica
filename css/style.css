@@ -77,6 +77,11 @@ select {
     font-family: inherit;
 }
 
+/* Garante que o menu fixo não tampe os títulos ao clicar nos links */
+section {
+  scroll-margin-top: 100px;
+}
+
 /* ==========================================================================
    UTILITÁRIOS & COMPONENTES BASE
    ========================================================================== */
@@ -1526,3 +1531,4 @@ details.accordion-item[open] .accordion-icon {
         justify-content: center;
     }
 }
+
