@@ -1080,6 +1080,10 @@ select {
    FAQ NATIVO (HTML5 DETAILS/SUMMARY - 100% FUNCIONAL SEM JS)
    ========================================================================== */
 
+/* ==========================================================================
+   FAQ NATIVO (HTML5 DETAILS/SUMMARY - SEM DEPENDÊNCIA DE JS)
+   ========================================================================== */
+
 .accordion {
     margin-top: 48px;
     display: flex;
@@ -1117,16 +1121,18 @@ summary.accordion-button {
     cursor: pointer;
     outline: none;
     list-style: none;
-    /* Remove a setinha preta padrão do navegador */
+    /* Remove seta padrão preta */
     user-select: none;
+    -webkit-user-select: none;
 }
 
-/* Remove o triângulo padrão no Chrome, Safari e Edge */
-summary::-webkit-details-marker {
+/* Remove marcadores padrões dos navegadores */
+summary::-webkit-details-marker,
+summary::marker {
     display: none;
 }
 
-/* Seta customizada com rotação ao abrir */
+/* Rotação suave da seta */
 .accordion-icon {
     width: 20px;
     height: 20px;
@@ -1143,7 +1149,6 @@ details.accordion-item[open] .accordion-icon {
 
 .accordion-panel {
     padding: 0 28px 24px 28px;
-    animation: fadeIn 0.3s ease-in-out;
 }
 
 .accordion-content p {
