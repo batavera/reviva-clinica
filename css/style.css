@@ -560,8 +560,39 @@ section {
 }
 
 /* Card de Vídeo */
+/* ==========================================================================
+   COLUNA DO VÍDEO & PROVA SOCIAL INTEGRADA (DESKTOP E MOBILE)
+   ========================================================================== */
+
 .hero-visual {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Card de Avaliação integrado abaixo do vídeo, sem cobrir nada */
+.floating-badge {
+    position: static;
+    /* Remove o posicionamento flutuante */
+    margin-top: 16px;
+    /* Espaçamento elegante abaixo do vídeo */
+    width: 100%;
+    max-width: 100%;
+    background: var(--color-white);
+    padding: 12px 20px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(28, 82, 83, 0.08);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.floating-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
 }
 
 .hero-video-card {
