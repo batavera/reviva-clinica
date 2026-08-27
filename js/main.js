@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileNav = document.getElementById('mobile-nav');
     const appointmentForm = document.getElementById('appointment-form');
 
-    // 3. Efeito de Scroll no Header
+    // 3. Efeito de Scroll no Header (Encolhimento do Logo)
     const handleScroll = () => {
         if (header) {
             if (window.scrollY > 20) {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    // 4. Menu Mobile
+    // 4. Menu Mobile Drawer
     if (menuToggle && mobileNav) {
         menuToggle.addEventListener('click', () => {
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
@@ -55,33 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. FAQ Accordion (Clique Garantido)
-    const accordionButtons = document.querySelectorAll('.accordion-button');
-
-    accordionButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            const currentItem = button.closest('.accordion-item');
-            if (!currentItem) return;
-
-            const isAlreadyActive = currentItem.classList.contains('active');
-
-            // Fecha todas as outras perguntas
-            document.querySelectorAll('.accordion-item').forEach(item => {
-                item.classList.remove('active');
-                const btn = item.querySelector('.accordion-button');
-                if (btn) btn.setAttribute('aria-expanded', 'false');
-            });
-
-            // Abre a pergunta clicada se ela não estava aberta
-            if (!isAlreadyActive) {
-                currentItem.classList.add('active');
-                button.setAttribute('aria-expanded', 'true');
-            }
-        });
-    });
-
-    // 6. Envio do Formulário para o WhatsApp
+    // 5. Envio do Formulário para o WhatsApp
     if (appointmentForm) {
         appointmentForm.addEventListener('submit', (event) => {
             event.preventDefault();
