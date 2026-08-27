@@ -79,7 +79,7 @@ select {
 
 /* Garante que o menu fixo não tampe os títulos ao clicar nos links */
 section {
-  scroll-margin-top: 100px;
+    scroll-margin-top: 100px;
 }
 
 /* ==========================================================================
@@ -627,29 +627,35 @@ section {
    CARD FLUTUANTE REPOSICIONADO (SUPERIOR ESQUERDO)
    ========================================================================== */
 
+/* ==========================================================================
+   CARD DE ATENDIMENTO HUMANIZADO (DESK: FLUTUANTE | MOBILE: INTEGRADO)
+   ========================================================================== */
+
 .floating-badge {
     position: absolute;
-    top: 10px;
-    /* Movido para a parte de cima */
-    left: -12px;
-    /* Mantém o efeito flutuante saindo da borda */
+    top: 16px;
+    left: -20px;
     background: var(--color-white);
-    padding: 6px 10px;
+    padding: 10px 14px;
     border-radius: var(--radius-md);
     border: 1px solid rgba(28, 82, 83, 0.1);
     box-shadow: var(--shadow-card-hover);
     display: flex;
     align-items: center;
-    gap: 14px;
-    max-width: 290px;
+    gap: 12px;
+    max-width: 280px;
     z-index: 10;
 }
 
-/* Ajuste para telas menores/mobile */
+/* No celular: remove a sobreposição e posiciona abaixo do vídeo */
 @media (max-width: 992px) {
     .floating-badge {
-        top: -16px;
-        left: 16px;
+        position: static;
+        margin: 16px auto 0 auto;
+        max-width: 100%;
+        width: 100%;
+        justify-content: center;
+        box-shadow: var(--shadow-card);
     }
 }
 
@@ -1531,4 +1537,3 @@ details.accordion-item[open] .accordion-icon {
         justify-content: center;
     }
 }
-
